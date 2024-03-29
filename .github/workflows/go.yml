@@ -23,6 +23,6 @@ jobs:
 
     - name: Build and publish
       run: |
-          docker login --username $GH_USERNAME --password ${{ secrets.GHCR_TOKEN }} ghcr.io
-          docker build . --tag ghcr.io/$GH_USERNAME/simple-rest-api:latest
-          docker push ghcr.io/$GH_USERNAME/simple-rest-api:latest
+          docker login --username ${{ vars.GH_USERNAME }} --password ${{ secrets.GHCR_TOKEN }} ghcr.io
+          docker build . --tag ghcr.io/${{ vars.GH_USERNAME }}/simple-rest-api:latest
+          docker push ghcr.io/${{ vars.GH_USERNAME }}/simple-rest-api:latest
