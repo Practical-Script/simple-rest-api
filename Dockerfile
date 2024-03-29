@@ -2,7 +2,7 @@ FROM golang:1.22 as build
 
 WORKDIR /app
 
-COPY ./src ./
+COPY ./ ./
 
 RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux go build -o /simple-rest-api
